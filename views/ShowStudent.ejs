@@ -11,6 +11,7 @@
             <table class="table">
               <thead class="table-dark">
                 <tr>
+                  <th>*</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Age</th>
@@ -20,6 +21,17 @@
               <tbody>
                 <% stud.forEach(Student => { %>
                 <tr>
+                  <td>
+                    <a
+                      href="/stud/delete/<%= Student._id %>"
+                      style="text-decoration: none"
+                      class="text-danger"
+                      title="Delete Student"
+                      >
+                      <i class="fa fa-trash"></i>
+                      </a
+                    >
+                  </td>
                   <td><%= Student.name %></td>
                   <td><%= Student.email %></td>
                   <td><%= Student.age %></td>
@@ -37,7 +49,7 @@
                       href="/stud/show_details/<%= Student._id %>"
                       style="text-decoration: none"
                       class="text-success"
-                      >Show Remarks</a
+                      ><i class="fa fa-eye"></i> Show Remarks</a
                     >
                   </td>
                 </tr>

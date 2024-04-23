@@ -6,7 +6,7 @@ import Student from "./model/Student.js";
 import Remark from "./model/Remark.js";
 
 const app = express();
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 80;
 
 app.use(morgan("dev"));
 
@@ -76,6 +76,14 @@ app.get("/stud/show_details/:id", async (req, res) => {
     Remark.find().then((remarks) => {
       res.render("ShowStudentDetails", { stud, remarks, moment });
     });
+  });
+});
+
+app.get("/stud/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  Student.findByIdAndDelete(id).then(() => {
+    console.log(`${id} deleted successfully`);
+    res.redirect("/stud");
   });
 });
 

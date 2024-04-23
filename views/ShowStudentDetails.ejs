@@ -30,7 +30,9 @@
               remark.student){ %>
               <tr>
                 <td><%= remark.text %></td>
-                <td><%= moment(remark.date).format('DD-MM-YYYY hh:mm:ssA') %></td>
+                <td>
+                  <%= moment(remark.date).format('DD-MM-YYYY hh:mm:ssA') %>
+                </td>
               </tr>
               <% }}) %>
             </table>
