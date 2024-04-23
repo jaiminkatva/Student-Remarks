@@ -1,0 +1,53 @@
+<%- include("header.ejs") %>
+<section class="vh-100" style="background-color: #2779e2">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-8">
+        <div class="card" style="border-radius: 15px">
+          <h1 class="text-primary text-center mt-5 mb-2">Remarks Form</h1>
+
+          <hr class="mx-n3" />
+          <form method="post">
+            <div class="card-body">
+              <div class="row align-items-center pt-4 pb-3">
+                <div class="col-md-3 ps-5">
+                  <h6 class="mb-0">Student Name</h6>
+                </div>
+                <div class="col-md-9 pe-5">
+                  <input
+                    type="text"
+                    name="student"
+                    id="student"
+                    class="form-control form-control-lg"
+                    value="<%= stud.name %>"
+                  />
+                </div>
+              </div>
+
+              <div class="row align-items-center py-3">
+                <div class="col-md-3 ps-5">
+                  <h6 class="mb-0">Remarks</h6>
+                </div>
+                <div class="col-md-9 pe-5">
+                  <input
+                    type="text"
+                    name="text"
+                    class="form-control form-control-lg"
+                  />
+                </div>
+              </div>
+
+              <hr class="mx-n3" />
+
+              <div class="px-5 py-4">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Submit Data
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

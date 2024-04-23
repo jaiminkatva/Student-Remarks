@@ -1,0 +1,55 @@
+<%- include("header") %>
+
+<section class="vh-100" style="background-color: #2779e2">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-8">
+        <div class="card" style="border-radius: 15px">
+          <h1 class="text-primary text-center mt-5 mb-2">Student Data</h1>
+          <hr class="mx-n3" />
+          <div class="p-3">
+            <table class="table">
+              <thead class="table-dark">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Add Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% stud.forEach(Student => { %>
+                <tr>
+                  <td><%= Student.name %></td>
+                  <td><%= Student.email %></td>
+                  <td><%= Student.age %></td>
+                  <td>
+                    <a
+                      href="/stud/<%= Student._id %>"
+                      style="text-decoration: none"
+                      class="text-primary"
+                      title="Add Remarks"
+                      >
+                      <i class="fa fa-pencil"></i>
+                      Add</a
+                    >
+                    <a
+                      href="/stud/show_details/<%= Student._id %>"
+                      style="text-decoration: none"
+                      class="text-success"
+                      >Show Remarks</a
+                    >
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+            <div class="d-md-flex justify-content-md-end">
+              <a href="/" class="btn btn-primary"> Add Student </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
